@@ -1,10 +1,10 @@
 function tocaSom(seletorAudio) {
   const elemento = document.querySelector(seletorAudio);
 
-  if (elemento == null) {
-    console.log("Elemento not found");
-  } else if (elemento != null && elemento.localName === 'audio') {
+  if (elemento && elemento.localName === "audio") {
     elemento.play();
+  } else if (elemento == null) {
+    console.log("Elemento not found");
   }
 }
 
@@ -29,4 +29,10 @@ for (let contador = 0; contador < listaDeTeclas.length; contador++) {
   tecla.onkeyup = function () {
     tecla.classList.remove("ativa");
   };
+}
+
+if (elemento.localName === "audio") {
+  elemento.play();
+} else {
+  console.log("Elemento não encontrado");
 }
